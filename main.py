@@ -22,10 +22,12 @@ class Historico:
 class Conta:
 
     def __init__(self, numero, cliente, saldo, limite=1000.0):
+        if not isinstance(cliente, Cliente):
+            raise TypeError("cliente must be of type Client not {}".format(type(cliente)))
         self.titular = cliente
-        self.numero = numero
-        self.saldo = saldo
-        self.limite = limite
+        self.numero = str(numero)
+        self.saldo = float(saldo)
+        self.limite = float(limite)
         self.historico = Historico()
 
     def deposita(self, valor):
@@ -42,6 +44,7 @@ class Conta:
     def extrato(self):
         print(f"numero {self.numero} \nsaldo {self.saldo}")
         self.historico.transacoes.append(f"Tirou extrato - saldo de: R$ {self.saldo}")
+        return self.saldo
 
     def transfere_para(self, destino, valor):
         retirou = self.saca(valor)
