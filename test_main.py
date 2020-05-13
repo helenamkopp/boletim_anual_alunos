@@ -1,16 +1,19 @@
-from main import Conta, Cliente
+import unittest
+from main import Conta, Cliente, Historico
 
-cliente1 = Cliente("Helena", "Kopp", "075.091.024-28")
-cliente2 = Cliente("Romulo", "Rosa", "011.087.986-41")
 
-conta1 = Conta("123-4", cliente1, 1000.0)
-conta2 = Conta("123-5", cliente2, 1000.0)
+class TestCliente(unittest.TestCase):
+    cliente1 = Cliente("Maria", "Silva", "077.091.024-28")
+    cliente2 = Cliente("João", "Santos", "011.088.986-41")
 
-conta1.deposita(100.0)
-conta1.saca(50.0)
-conta1.transfere_para(conta2, 200.0)
-conta1.extrato()
+    def test_nome(self):
+        self.assertEqual(self.cliente1.nome, "Maria")
+        self.assertEqual(self.cliente2.nome, "João")
 
-conta1.historico.imprime()
-print("----------------")
-conta2.historico.imprime()
+    def test_sobrenome(self):
+        self.assertEqual(self.cliente1.sobrenome, "Silva")
+        self.assertEqual(self.cliente2.sobrenome, "Santos")
+
+    def test_cpf(self):
+        self.assertEqual(self.cliente1.cpf, "077.091.024-28")
+        self.assertEqual(self.cliente2.cpf, "011.088.986-41")
