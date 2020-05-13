@@ -1,3 +1,5 @@
+#Alguns testes
+
 import unittest
 from main import Conta, Cliente, Historico
 
@@ -38,6 +40,8 @@ class TestFuncionalidades(unittest.TestCase):
 
         self.assertEqual(self.conta1.extrato(), 4300.45)
         self.assertEqual(self.conta2.extrato(), 6050.65)
+
+
 
 
 
