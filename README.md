@@ -1,6 +1,6 @@
 # conta_bancaria_v1
 
-Pequeno projeto construído com o PyCharm de funcionalidades de uma conta bancária. 
+Pequeno projeto Orientado a Objetos construído com o PyCharm de funcionalidades de uma conta bancária. 
 
 Arquivo main.py:
 - class Cliente: possui método construtor e é dedicada exclusivamente aos dados do cliente (nome, sobrenome, cpf);
