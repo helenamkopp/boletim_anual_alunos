@@ -54,7 +54,7 @@ class Conta:
             return False
         else:
             destino.deposita(valor)
-            self.historico.transacoes.append(f"Transferencia de R$ {valor} para conta {destino.numero}")
+            self.historico.transacoes.append(f"Transferencia de R$ {valor} para conta {destino.deposito}")
             return True
 
 
